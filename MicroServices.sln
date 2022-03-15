@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "register", "register\regist
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "wallet", "wallet\wallet\wallet.csproj", "{CFA32FF2-40FA-45F7-9DA3-215A5518E4F6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "shared", "shared\shared.csproj", "{C3336784-AEBA-46B2-BCB4-6AFA7A7D890D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{CFA32FF2-40FA-45F7-9DA3-215A5518E4F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFA32FF2-40FA-45F7-9DA3-215A5518E4F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFA32FF2-40FA-45F7-9DA3-215A5518E4F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3336784-AEBA-46B2-BCB4-6AFA7A7D890D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3336784-AEBA-46B2-BCB4-6AFA7A7D890D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3336784-AEBA-46B2-BCB4-6AFA7A7D890D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3336784-AEBA-46B2-BCB4-6AFA7A7D890D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

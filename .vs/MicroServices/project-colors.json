@@ -25,7 +25,32 @@
       "ProjectGuid": "cc985030-de36-430f-a9a0-3735494f41e8",
       "DisplayName": "coordinator",
       "ColorIndex": 4
+    },
+    "580ce6be-0b89-41ac-892d-c17992d00794": {
+      "ProjectGuid": "580ce6be-0b89-41ac-892d-c17992d00794",
+      "DisplayName": "blockchain",
+      "ColorIndex": 5
+    },
+    "f64638af-2537-4879-b21a-5c91881796d6": {
+      "ProjectGuid": "f64638af-2537-4879-b21a-5c91881796d6",
+      "DisplayName": "shared",
+      "ColorIndex": 6
+    },
+    "4508b45b-9435-4d92-b56a-9de288b79512": {
+      "ProjectGuid": "4508b45b-9435-4d92-b56a-9de288b79512",
+      "DisplayName": "opencloser",
+      "ColorIndex": 7
+    },
+    "c3336784-aeba-46b2-bcb4-6afa7a7d890d": {
+      "ProjectGuid": "c3336784-aeba-46b2-bcb4-6afa7a7d890d",
+      "DisplayName": "shared",
+      "ColorIndex": 8
+    },
+    "9a768027-3015-4ae0-bc6d-7504f9173bab": {
+      "ProjectGuid": "9a768027-3015-4ae0-bc6d-7504f9173bab",
+      "DisplayName": "register",
+      "ColorIndex": 9
     }
   },
-  "NextColorIndex": 5
+  "NextColorIndex": 10
 }
