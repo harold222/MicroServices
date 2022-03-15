@@ -1,13 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "xrcKWs+N0ccxF1twQe78pyofCEYzzRWQHyhIQzJ4RDk4PlSzQiweVQwaj+NdihO+WhYzAbX9yHIyFC9OmXQV+g==",
+  "dgSpecHash": "CQHqzi9izK6aX/XxfHYmbu28cf2Ly4Q3bofoeNbyktKkb8Fq4CxO1ByEuwArHUNK9w7RRZNMJictxWXa4igjGQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\pedra\\OneDrive\\Documentos\\GitHub\\MicroServices\\opencloser\\opencloser\\opencloser.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pedra\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\pedra\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\pedra\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\pedra\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
-    "C:\\Users\\pedra\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\pedra\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.3.0\\swashbuckle.aspnetcore.swagger.6.3.0.nupkg.sha512",
     "C:\\Users\\pedra\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
     "C:\\Users\\pedra\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
   ],

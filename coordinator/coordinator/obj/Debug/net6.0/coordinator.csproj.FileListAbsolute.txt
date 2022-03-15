@@ -14,7 +14,6 @@ C:\Users\pedra\OneDrive\Documentos\GitHub\MicroServices\coordinator\coordinator\
 C:\Users\pedra\OneDrive\Documentos\GitHub\MicroServices\coordinator\coordinator\obj\Debug\net6.0\coordinator.AssemblyInfoInputs.cache
 C:\Users\pedra\OneDrive\Documentos\GitHub\MicroServices\coordinator\coordinator\obj\Debug\net6.0\coordinator.AssemblyInfo.cs
 C:\Users\pedra\OneDrive\Documentos\GitHub\MicroServices\coordinator\coordinator\obj\Debug\net6.0\coordinator.csproj.CoreCompileInputs.cache
-C:\Users\pedra\OneDrive\Documentos\GitHub\MicroServices\coordinator\coordinator\obj\Debug\net6.0\coordinator.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\pedra\OneDrive\Documentos\GitHub\MicroServices\coordinator\coordinator\obj\Debug\net6.0\coordinator.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\pedra\OneDrive\Documentos\GitHub\MicroServices\coordinator\coordinator\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\pedra\OneDrive\Documentos\GitHub\MicroServices\coordinator\coordinator\obj\Debug\net6.0\staticwebassets.development.json
@@ -24,3 +23,6 @@ C:\Users\pedra\OneDrive\Documentos\GitHub\MicroServices\coordinator\coordinator\
 C:\Users\pedra\OneDrive\Documentos\GitHub\MicroServices\coordinator\coordinator\obj\Debug\net6.0\ref\coordinator.dll
 C:\Users\pedra\OneDrive\Documentos\GitHub\MicroServices\coordinator\coordinator\obj\Debug\net6.0\coordinator.pdb
 C:\Users\pedra\OneDrive\Documentos\GitHub\MicroServices\coordinator\coordinator\obj\Debug\net6.0\coordinator.genruntimeconfig.cache
+C:\Users\pedra\OneDrive\Documentos\GitHub\MicroServices\coordinator\coordinator\obj\Debug\net6.0\coordinator.csproj.AssemblyReference.cache
+C:\Users\pedra\OneDrive\Documentos\GitHub\MicroServices\coordinator\coordinator\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\pedra\OneDrive\Documentos\GitHub\MicroServices\coordinator\coordinator\obj\Debug\net6.0\coordinator.MvcApplicationPartsAssemblyInfo.cs

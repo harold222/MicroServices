@@ -14,3 +14,7 @@ build_property.SupportLocalizedComponentNames =
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = C:\Users\pedra\OneDrive\Documentos\GitHub\MicroServices\register\register
 build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/pedra/OneDrive/Documentos/GitHub/MicroServices/shared/stylecop.json]
+build_metadata.AdditionalFiles.TargetPath = 
+build_metadata.AdditionalFiles.CssScope = 

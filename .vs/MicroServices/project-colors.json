@@ -50,7 +50,12 @@
       "ProjectGuid": "9a768027-3015-4ae0-bc6d-7504f9173bab",
       "DisplayName": "register",
       "ColorIndex": 9
+    },
+    "cfa32ff2-40fa-45f7-9da3-215a5518e4f6": {
+      "ProjectGuid": "cfa32ff2-40fa-45f7-9da3-215a5518e4f6",
+      "DisplayName": "wallet",
+      "ColorIndex": 10
     }
   },
-  "NextColorIndex": 10
+  "NextColorIndex": 11
 }
