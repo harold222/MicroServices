@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "42553da8-5319-4c5c-8859-92819340b9ec": {
+      "ProjectGuid": "42553da8-5319-4c5c-8859-92819340b9ec",
+      "DisplayName": "blockchain",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

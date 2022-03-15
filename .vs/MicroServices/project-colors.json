@@ -1,0 +1,31 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "d7144fe6-f178-4d6a-bcae-612186b314a7": {
+      "ProjectGuid": "d7144fe6-f178-4d6a-bcae-612186b314a7",
+      "DisplayName": "Wallet",
+      "ColorIndex": 0
+    },
+    "747c2b5f-3a71-45ae-a94f-22617160a363": {
+      "ProjectGuid": "747c2b5f-3a71-45ae-a94f-22617160a363",
+      "DisplayName": "coordinador",
+      "ColorIndex": 1
+    },
+    "c06eca84-de9d-4915-be18-ed2d3503e4df": {
+      "ProjectGuid": "c06eca84-de9d-4915-be18-ed2d3503e4df",
+      "DisplayName": "coordinator",
+      "ColorIndex": 2
+    },
+    "80343722-f4e8-4e75-b055-3ef67156d39f": {
+      "ProjectGuid": "80343722-f4e8-4e75-b055-3ef67156d39f",
+      "DisplayName": "coordinator",
+      "ColorIndex": 3
+    },
+    "cc985030-de36-430f-a9a0-3735494f41e8": {
+      "ProjectGuid": "cc985030-de36-430f-a9a0-3735494f41e8",
+      "DisplayName": "coordinator",
+      "ColorIndex": 4
+    }
+  },
+  "NextColorIndex": 5
+}
