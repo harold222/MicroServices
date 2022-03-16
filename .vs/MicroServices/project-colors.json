@@ -55,7 +55,47 @@
       "ProjectGuid": "cfa32ff2-40fa-45f7-9da3-215a5518e4f6",
       "DisplayName": "wallet",
       "ColorIndex": 10
+    },
+    "27ea0c10-33d2-40ce-807d-e995e93d0e53": {
+      "ProjectGuid": "27ea0c10-33d2-40ce-807d-e995e93d0e53",
+      "DisplayName": "test",
+      "ColorIndex": 11
+    },
+    "a3fab274-7ada-4878-86bc-edf143336c9e": {
+      "ProjectGuid": "a3fab274-7ada-4878-86bc-edf143336c9e",
+      "DisplayName": "wallet",
+      "ColorIndex": 12
+    },
+    "1ba9c588-5bb3-4f53-b639-dddd73d6d72e": {
+      "ProjectGuid": "1ba9c588-5bb3-4f53-b639-dddd73d6d72e",
+      "DisplayName": "shared",
+      "ColorIndex": 13
+    },
+    "7026b510-7a5d-41e8-8d8d-d56cb73d60bf": {
+      "ProjectGuid": "7026b510-7a5d-41e8-8d8d-d56cb73d60bf",
+      "DisplayName": "blockchain",
+      "ColorIndex": 14
+    },
+    "2d3030fd-0e00-45a7-bc41-4c409a5ce356": {
+      "ProjectGuid": "2d3030fd-0e00-45a7-bc41-4c409a5ce356",
+      "DisplayName": "coordinator",
+      "ColorIndex": 15
+    },
+    "8d74bbe3-cbfb-450e-9ded-21ab94d59592": {
+      "ProjectGuid": "8d74bbe3-cbfb-450e-9ded-21ab94d59592",
+      "DisplayName": "opencloser",
+      "ColorIndex": 0
+    },
+    "7cd3731a-bfa5-45d5-813d-794764e7e2b0": {
+      "ProjectGuid": "7cd3731a-bfa5-45d5-813d-794764e7e2b0",
+      "DisplayName": "register",
+      "ColorIndex": 1
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Archivos varios",
+      "ColorIndex": -1
     }
   },
-  "NextColorIndex": 11
+  "NextColorIndex": 2
 }

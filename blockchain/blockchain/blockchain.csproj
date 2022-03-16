@@ -1,28 +1,29 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
-    <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
 		<AssemblyName>blockchain</AssemblyName>
-        <RootNamespace>blockchain</RootNamespace>
-        <EnableNETAnalyzers>false</EnableNETAnalyzers>
-        <EnforceCodeStyleInBuild>false</EnforceCodeStyleInBuild>
-        <AnalysisLevel>latest</AnalysisLevel>
-        <RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
-    </PropertyGroup>
+		<RootNamespace>blockchain</RootNamespace>
+		<EnableNETAnalyzers>false</EnableNETAnalyzers>
+		<EnforceCodeStyleInBuild>false</EnforceCodeStyleInBuild>
+		<AnalysisLevel>latest</AnalysisLevel>
+		<RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
+	</PropertyGroup>
 
-    <ItemGroup>
+	<ItemGroup>
 		<AdditionalFiles Include="..\..\shared\stylecop.json" Link="stylecop.json" />
 	</ItemGroup>
 
-    <ItemGroup>
-        <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
-    </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+	</ItemGroup>
 
+	<ItemGroup>
+		<ProjectReference Include="..\..\shared\shared.csproj" />
+	</ItemGroup>
+	
 	<ProjectExtensions>
-		<VisualStudio>
-			<UserProperties properties_4launchsettings_1json__JsonSchema="" />
-		</VisualStudio>
+		<VisualStudio><UserProperties properties_4launchsettings_1json__JsonSchema="" /></VisualStudio>
 	</ProjectExtensions>
 
 </Project>

@@ -7,13 +7,14 @@ namespace blockchain
     {
         public static void Main(string[] args)
         {
-            IHostBuilder builder = CreateHostBuilder(args);
-            IHost host = builder.Build();
-            host.Run();
+            CreateHostBuilder(args).Build().Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder => webBuilder.UseStartup<Startup>());
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    webBuilder.UseStartup<Startup>();
+                });
     }
 }

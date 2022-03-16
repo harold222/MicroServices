@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blockchain", "blockchain\blockchain.csproj", "{42553DA8-5319-4C5C-8859-92819340B9EC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blockchain", "blockchain\blockchain.csproj", "{DC1A1409-8EFF-4F4C-91A9-578AED47208E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "shared", "..\shared\shared.csproj", "{6AFFE589-6605-48A5-8AB8-EB311EAB1559}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +13,19 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{42553DA8-5319-4C5C-8859-92819340B9EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{42553DA8-5319-4C5C-8859-92819340B9EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{42553DA8-5319-4C5C-8859-92819340B9EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{42553DA8-5319-4C5C-8859-92819340B9EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC1A1409-8EFF-4F4C-91A9-578AED47208E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC1A1409-8EFF-4F4C-91A9-578AED47208E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC1A1409-8EFF-4F4C-91A9-578AED47208E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC1A1409-8EFF-4F4C-91A9-578AED47208E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AFFE589-6605-48A5-8AB8-EB311EAB1559}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AFFE589-6605-48A5-8AB8-EB311EAB1559}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AFFE589-6605-48A5-8AB8-EB311EAB1559}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AFFE589-6605-48A5-8AB8-EB311EAB1559}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {EEB28BAA-DF20-4636-8D4B-9882E0099751}
+		SolutionGuid = {E939E3C1-FF70-4140-ADFF-DA5CCF78756C}
 	EndGlobalSection
 EndGlobal
