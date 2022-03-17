@@ -1,11 +1,6 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace coordinator
 {
@@ -17,10 +12,12 @@ namespace coordinator
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                });
+             Host.CreateDefaultBuilder(args)
+             .ConfigureAppConfiguration((hostingContext, config) =>
+             {
+                 _ = config.AddJsonFile($"appsettings.local.json", false, true);
+                 _ = config.AddJsonFile($"ocelot.local.json", false, true);
+             })
+                 .ConfigureWebHostDefaults(webBuilder => _ = webBuilder.UseStartup<Startup>());
     }
 }
