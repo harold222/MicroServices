@@ -5,11 +5,22 @@ namespace blockchain.Controllers
 {
     public class BlockChainController : BaseController
     {
+        [HttpGet]
+        public ActionResult CreateBlock()
+        {
+            return Ok(new { Name = "Creando bloque" });
+        }
 
         [HttpGet]
-        public ActionResult GetProjectName()
+        public ActionResult RegisterData()
         {
-            return Ok(new { Project = "BlockChain" });
+            return Ok(new { Name = "registrando data" });
+        }
+
+        [HttpGet]
+        public ActionResult ConsultDir()
+        {
+            return Ok(new { Name = "Consultando direccion" });
         }
     }
 }
