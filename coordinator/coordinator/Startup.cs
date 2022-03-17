@@ -23,14 +23,23 @@ namespace coordinator
         {
             _ = services.AddCors(opt =>
                 opt.AddPolicy("AllowSpecificOrigin", builder =>
-                builder.WithOrigins("*")));
+                    builder.AllowAnyOrigin()
+                    .AllowAnyHeader()
+                    .AllowAnyMethod()
+                )
+            );
 
             _ = services.AddOcelot();
             _ = services.AddSwaggerForOcelot(this.Configuration);
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "coordinator", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo
+                    {
+                        Title = "Proyecto Block Chain - coordinator",
+                        Version = "v1",
+                    }
+                );
             });
 
 

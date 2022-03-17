@@ -106,5 +106,9 @@
         }
       ]
     }
-  ]
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:4440/"
+  },
+  "AllowedHosts": "*"
 }
