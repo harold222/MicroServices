@@ -1,17 +1,18 @@
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
-WORKDIR /src
-COPY ./coordinator/coordinator.csproj .
+WORKDIR /app
+COPY coordinator ./
 RUN dotnet restore
-COPY . .
-RUN dotnet publish -c release -o /app
+RUN dotnet publish -c release -o out
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0
-WORKDIR /app
-ENV ASPNETCORE_URLS="http://*:5000"
+ARG BUILD_CONFIGURATION=Debug
 ENV ASPNETCORE_ENVIRONMENT=local
-# EXPOSE 81
-EXPOSE 5000
-COPY --from=build /app .
+ENV DOTNET_USE_POLLING_FILE_WATCHER=true  
+ENV ASPNETCORE_URLS=http://+:80  
+WORKDIR /app
+COPY --from=build /app/out ./
+
+EXPOSE 80
 ENTRYPOINT ["dotnet", "coordinator.dll"]
 
 # docker build -t coordinator .
