@@ -1,0 +1,15 @@
+# docker-compose build
+# docker-compose up
+
+version: '3.9'
+
+services:
+  blockchain:
+    image: blockchain
+    build:
+      context: ./
+      args:
+        NAME_PROJECT: blockchain
+      dockerfile: Dockerfile
+    ports:
+      - "5001:80"
