@@ -9,6 +9,13 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "local"
       }
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "launchBrowser": true,
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "publishAllPorts": true,
+      "useSSL": true
     }
   }
 }
