@@ -1,5 +1,7 @@
 # docker-compose build
 # docker-compose up
+# volumes:
+#   - namenode:/hadoop/dfs/name
 
 version: '3.9'
 
@@ -10,9 +12,13 @@ services:
       context: ./
       args:
         NAME_PROJECT: blockchain
+        PORT_PROJECT: 80
       dockerfile: Dockerfile
     ports:
       - "5001:80"
+    environment:
+      - ASPNETCORE_URLS=http://*:5001
+      - ASPNETCORE_ENVIRONMENT=development
     depends_on: 
       - opencloser
   opencloser:
@@ -21,9 +27,13 @@ services:
       context: ./
       args:
         NAME_PROJECT: opencloser
+        PORT_PROJECT: 81
       dockerfile: Dockerfile
     ports:
-      - "5002:80"
+      - "5002:81"
+    environment:
+      - ASPNETCORE_URLS=http://+:5002
+      - ASPNETCORE_ENVIRONMENT=development
     depends_on: 
       - register
   register:
@@ -32,9 +42,13 @@ services:
       context: ./
       args:
         NAME_PROJECT: register
+        PORT_PROJECT: 82
       dockerfile: Dockerfile
     ports:
-      - "5003:80"
+      - "5003:82"
+    environment:
+      - ASPNETCORE_URLS=http://+:5003
+      - ASPNETCORE_ENVIRONMENT=development
     depends_on: 
       - wallet
   wallet:
@@ -43,6 +57,25 @@ services:
       context: ./
       args:
         NAME_PROJECT: wallet
+        PORT_PROJECT: 83
       dockerfile: Dockerfile
     ports:
-      - "5004:80"
+      - "5004:83"
+    environment:
+      - ASPNETCORE_URLS=http://+:5004
+      - ASPNETCORE_ENVIRONMENT=development
+    depends_on: 
+      - coordinator
+  coordinator:
+    image: coordinator
+    build:
+      context: ./
+      args:
+        NAME_PROJECT: coordinator
+        PORT_PROJECT: 84
+      dockerfile: Dockerfile
+    ports:
+      - "5000:84"
+    environment:
+      - ASPNETCORE_URLS=http://+:5000
+      - ASPNETCORE_ENVIRONMENT=development
