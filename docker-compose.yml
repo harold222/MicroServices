@@ -1,0 +1,73 @@
+# docker-compose build
+# docker-compose up
+
+version: '3.9'
+
+services:
+  blockchain:
+    image: blockchain
+    build:
+      context: ./
+      args:
+        NAME_PROJECT: blockchain
+      dockerfile: Dockerfile
+    networks:
+      - private_network
+    environment:
+      - ASPNETCORE_ENVIRONMENT=development
+  opencloser:
+    image: opencloser
+    build:
+      context: ./
+      args:
+        NAME_PROJECT: opencloser
+      dockerfile: Dockerfile
+    networks:
+      - private_network
+    environment:
+      - ASPNETCORE_ENVIRONMENT=development
+  register:
+    image: register
+    build:
+      context: ./
+      args:
+        NAME_PROJECT: register
+      dockerfile: Dockerfile
+    networks:
+      - private_network
+    environment:
+      - ASPNETCORE_ENVIRONMENT=development
+  wallet:
+    image: wallet
+    build:
+      context: ./
+      args:
+        NAME_PROJECT: wallet
+      dockerfile: Dockerfile
+    networks:
+      - private_network
+    environment:
+      - ASPNETCORE_ENVIRONMENT=development
+  coordinator:
+    image: coordinator
+    build:
+      context: ./
+      args:
+        NAME_PROJECT: coordinator
+      dockerfile: Dockerfile
+    ports:
+      - "5000:80"
+    networks:
+      - private_network
+    environment:
+      - ASPNETCORE_ENVIRONMENT=development
+    depends_on:
+      - wallet
+      - register
+      - opencloser
+      - blockchain
+
+networks:
+  private_network:
+    name: BC1
+    driver: bridge
