@@ -1,7 +1,5 @@
 # docker-compose build
 # docker-compose up
-# volumes:
-#   - namenode:/hadoop/dfs/name
 
 version: '3.9'
 
@@ -12,70 +10,64 @@ services:
       context: ./
       args:
         NAME_PROJECT: blockchain
-        PORT_PROJECT: 80
       dockerfile: Dockerfile
-    ports:
-      - "5001:80"
+    networks:
+      - private_network
     environment:
-      - ASPNETCORE_URLS=http://*:5001
       - ASPNETCORE_ENVIRONMENT=development
-    depends_on: 
-      - opencloser
   opencloser:
     image: opencloser
     build:
       context: ./
       args:
         NAME_PROJECT: opencloser
-        PORT_PROJECT: 81
       dockerfile: Dockerfile
-    ports:
-      - "5002:81"
+    networks:
+      - private_network
     environment:
-      - ASPNETCORE_URLS=http://+:5002
       - ASPNETCORE_ENVIRONMENT=development
-    depends_on: 
-      - register
   register:
     image: register
     build:
       context: ./
       args:
         NAME_PROJECT: register
-        PORT_PROJECT: 82
       dockerfile: Dockerfile
-    ports:
-      - "5003:82"
+    networks:
+      - private_network
     environment:
-      - ASPNETCORE_URLS=http://+:5003
       - ASPNETCORE_ENVIRONMENT=development
-    depends_on: 
-      - wallet
   wallet:
     image: wallet
     build:
       context: ./
       args:
         NAME_PROJECT: wallet
-        PORT_PROJECT: 83
       dockerfile: Dockerfile
-    ports:
-      - "5004:83"
+    networks:
+      - private_network
     environment:
-      - ASPNETCORE_URLS=http://+:5004
       - ASPNETCORE_ENVIRONMENT=development
-    depends_on: 
-      - coordinator
   coordinator:
     image: coordinator
     build:
       context: ./
       args:
         NAME_PROJECT: coordinator
-        PORT_PROJECT: 84
       dockerfile: Dockerfile
     ports:
-      - "5000:84"
+      - "5000:80"
+    networks:
+      - private_network
     environment:
-      - ASPNETCORE_URLS=http://+:5000
       - ASPNETCORE_ENVIRONMENT=development
+    depends_on:
+      - wallet
+      - register
+      - opencloser
+      - blockchain
+
+networks:
+  private_network:
+    name: BC1
+    driver: bridge

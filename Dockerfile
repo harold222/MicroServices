@@ -1,10 +1,6 @@
-# colocar condicional para el coordinador que no usa el shared
-
 FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS base
 WORKDIR /app
-ARG PORT_PROJECT
-ENV PORT=${PORT_PROJECT}
-EXPOSE $PORT
+EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
