@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using shared.Common;
+using shared.Register;
 using shared.Wallet.Api.Request;
 using System.Net;
+using System.Threading.Tasks;
 
 namespace wallet.Controllers
 {
@@ -14,11 +16,11 @@ namespace wallet.Controllers
         }
 
         [HttpPost]
-        public ActionResult RegisterTransaction(RegisterNewTransaction request)
+        public async Task<ActionResult> RegisterTransaction(RegisterNewTransaction request)
         {
             if (!string.IsNullOrEmpty(request.Dir1) && !string.IsNullOrEmpty(request.Dir2))
             {
-
+                var registerResponse = await RegisterApi.RegisterTransaction(request).ConfigureAwait(false);
                 return Ok(new { Name = "Registrando Transaccion" });
             }
 

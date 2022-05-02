@@ -6,7 +6,7 @@ namespace register.Controllers
 {
     public class RegisterController : BaseController
     {
-        [HttpGet]
+        [HttpPost]
         public ActionResult RegisterTransaction(RegisterNewTransaction request)
         {
             return Ok(new { Name = "Registrar Transaccion", data = request.ToString() });
