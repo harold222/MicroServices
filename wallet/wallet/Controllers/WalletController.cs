@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using shared.Common;
+using shared.Wallet.Api.Request;
+using System.Net;
 
 namespace wallet.Controllers
 {
@@ -11,10 +13,19 @@ namespace wallet.Controllers
             return Ok(new { Name = "Consultando Fondos" });
         }
 
-        [HttpGet]
-        public ActionResult RegisterTransaction()
+        [HttpPost]
+        public ActionResult RegisterTransaction(RegisterNewTransaction request)
         {
-            return Ok(new { Name = "Registrando Transaccion" });
+            if (!string.IsNullOrEmpty(request.Dir1) && !string.IsNullOrEmpty(request.Dir2))
+            {
+
+                return Ok(new { Name = "Registrando Transaccion" });
+            }
+
+            return new ObjectResult(new { error = "Faltan direcciones" })
+            {
+                StatusCode = (int)HttpStatusCode.InternalServerError
+            };
         }
     }
 }

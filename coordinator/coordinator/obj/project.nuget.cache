@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "911ZNlE/EoO6MlP6Rah9wzfoRY55Uwf/HvfvEsy+fBX5KG4KX2I7DIgmk36o/a9yXh4CgmUQsGDnHxEj4AtBhw==",
+  "dgSpecHash": "pNDtqiZ+plfg1i9h6wC4b7+HBgaMmCSDVA17y+cZYt4rR/F9uQm/o2aL8SoS3p2utHyFHWtBY3ofFJIuph18FQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\pedra\\OneDrive\\Documentos\\GitHub\\MicroServices\\coordinator\\coordinator\\coordinator.csproj",
   "expectedPackageFiles": [
@@ -87,8 +87,7 @@
     "C:\\Users\\pedra\\.nuget\\packages\\system.security.principal.windows\\4.6.0\\system.security.principal.windows.4.6.0.nupkg.sha512",
     "C:\\Users\\pedra\\.nuget\\packages\\system.text.encoding\\4.3.0\\system.text.encoding.4.3.0.nupkg.sha512",
     "C:\\Users\\pedra\\.nuget\\packages\\system.threading\\4.3.0\\system.threading.4.3.0.nupkg.sha512",
-    "C:\\Users\\pedra\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
-    "C:\\Users\\pedra\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.12\\microsoft.netcore.app.host.win-x64.5.0.12.nupkg.sha512"
+    "C:\\Users\\pedra\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }
