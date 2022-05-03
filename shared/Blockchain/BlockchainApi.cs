@@ -1,6 +1,5 @@
 ﻿namespace shared.Blockchain
 {
-    using Microsoft.AspNetCore.Mvc;
     using shared.Blockchain.Api.Response;
     using shared.Common;
     using shared.Wallet.Api.Request;

@@ -11,14 +11,7 @@ namespace blockchain.Controllers
 {
     public class BlockChainController : BaseController
     {
-
         private readonly BlockchainLogic logic = new BlockchainLogic();
-
-        [HttpGet]
-        public ActionResult CreateBlock()
-        {
-            return Ok(new { Name = "Creando bloque" });
-        }
 
         [ApiExplorerSettings(IgnoreApi = true)]
         [HttpGet]

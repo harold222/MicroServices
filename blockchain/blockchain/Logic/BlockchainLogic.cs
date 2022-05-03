@@ -6,6 +6,8 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Dynamic;
 using shared.Blockchain.Model;
+using shared.Opencloser;
+using shared.Opencloser.Api.Response;
 
 namespace blockchain.Logic
 {
@@ -14,7 +16,7 @@ namespace blockchain.Logic
         private static List<dynamic> Blocks = new List<dynamic>();
         private static int currentEditBlock = 0;
 
-        public void RegistrarTx(string dir1, string dir2, float amount)
+        public async void RegistrarTx(string dir1, string dir2, float amount)
         {
             if (Blocks.Count > 0)
             {
@@ -22,20 +24,36 @@ namespace blockchain.Logic
 
                 if (allTransactions.Count() >= 3)
                 {
-                    // Close the block
-                    string resultHash = "";
-                    do
+                    BlockchainModel sendModel = new BlockchainModel
                     {
-                        Blocks[currentEditBlock].nonce = Blocks[currentEditBlock].nonce + 1;
-                        string allData =
-                            $"{Blocks[currentEditBlock].id}+{Blocks[currentEditBlock].nonce}+{Blocks[currentEditBlock].data}+{Blocks[currentEditBlock].previousHash}";
+                        id = Blocks[currentEditBlock].id,
+                        data = Blocks[currentEditBlock].data,
+                        nonce = Blocks[currentEditBlock].nonce,
+                        hash = Blocks[currentEditBlock].hash,
+                        previousHash = Blocks[currentEditBlock].previousHash
+                    };
 
-                        resultHash = GenerateHash(allData);
-                        // hash generate 000 at the beginning of the string
-                    } while (resultHash.Substring(0, 3) != "000");
+                    BlockchainModel responseModel = (await OpencloserApi.OpenBlock(sendModel)).NewBlock;
+                    Blocks[currentEditBlock].id = responseModel.id;
+                    Blocks[currentEditBlock].data = responseModel.data;
+                    Blocks[currentEditBlock].nonce = responseModel.nonce;
+                    Blocks[currentEditBlock].hash = responseModel.hash;
+                    Blocks[currentEditBlock].previousHash = responseModel.previousHash;
 
-                    // save hash of block
-                    Blocks[currentEditBlock].hash = resultHash;
+                    // Close the block
+                    //string resultHash = "";
+                    //do
+                    //{
+                    //    Blocks[currentEditBlock].nonce = Blocks[currentEditBlock].nonce + 1;
+                    //    string allData =
+                    //        $"{Blocks[currentEditBlock].id}+{Blocks[currentEditBlock].nonce}+{Blocks[currentEditBlock].data}+{Blocks[currentEditBlock].previousHash}";
+
+                    //    resultHash = GenerateHash(allData);
+                    //    // hash generate 000 at the beginning of the string
+                    //} while (resultHash.Substring(0, 3) != "000");
+
+                    //// save hash of block
+                    //Blocks[currentEditBlock].hash = resultHash;
                     // Create other block
                     CreateNewBlock();
                 }
@@ -100,15 +118,29 @@ namespace blockchain.Logic
             return amount;
         }
 
-        private string GenerateHash(string words)
-        {
-            using (SHA256 sha256 = SHA256.Create())
-            {
-                string word = string.Format("{0}{1}", sha256, words);
-                byte[] wordAsBytes = Encoding.UTF8.GetBytes(word);
-                return Convert.ToBase64String(sha256.ComputeHash(wordAsBytes));
-            }
-        }
+        //private string getSuperHash()
+        //{
+        //    string allHashes = "";
+
+        //    Blocks.ForEach(block =>
+        //    {
+        //        allHashes = allHashes != "" ?
+        //            $"{allHashes}{block.hash}" :
+        //            block.hash;
+        //    });
+
+        //    return allHashes != "" ? GenerateHash(allHashes) : "";
+        //}
+
+        //private string GenerateHash(string words)
+        //{
+        //    using (SHA256 sha256 = SHA256.Create())
+        //    {
+        //        string word = string.Format("{0}{1}", sha256, words);
+        //        byte[] wordAsBytes = Encoding.UTF8.GetBytes(word);
+        //        return Convert.ToBase64String(sha256.ComputeHash(wordAsBytes));
+        //    }
+        //}
 
         private static void CreateNewBlock()
         {
