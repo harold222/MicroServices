@@ -20,20 +20,18 @@ namespace blockchain.Controllers
             return Ok(new { Name = "Creando bloque" });
         }
 
+        [ApiExplorerSettings(IgnoreApi = true)]
         [HttpGet]
-        public ActionResult RegisterData()
+        public ConsultFundsResponse ConsultFunds(string direction)
         {
-            return Ok(new { Name = "registrando data" });
+            ConsultFundsResponse response = new ConsultFundsResponse();
+            response.TotalAmount = logic.ConsultFunds(direction);
+            return response;
         }
 
-        [HttpGet]
-        public ActionResult ConsultDir()
-        {
-            return Ok(new { Name = "Consultando direccion" });
-        }
-
+        [ApiExplorerSettings(IgnoreApi = true)]
         [HttpPost]
-        public async Task<RegisterTransactionResponse> RegisterTransaction(RegisterNewTransaction request)
+        public RegisterTransactionResponse RegisterTransaction(RegisterNewTransaction request)
         {
             RegisterTransactionResponse response = new RegisterTransactionResponse();
 

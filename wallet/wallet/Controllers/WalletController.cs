@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using shared.Blockchain;
 using shared.Blockchain.Api.Response;
 using shared.Common;
 using shared.Register;
@@ -12,9 +13,24 @@ namespace wallet.Controllers
     {
 
         [HttpGet]
-        public ActionResult ConsultFunds()
+        public async Task<ActionResult> ConsultFunds(string direction)
         {
-            return Ok(new { Name = "Consultando Fondos" });
+            ConsultFundsResponse response = await BlockchainApi.ConsultFunds(direction);
+
+            if (response.TotalAmount != -1)
+            {
+                return Ok(new
+                {
+                    Total = $"El saldo total de esta direccion es: {response.TotalAmount}"
+                });
+            }
+            else
+            {
+                return new ObjectResult(new { error = "No se encontro esta direccion." })
+                {
+                    StatusCode = (int)HttpStatusCode.InternalServerError
+                };
+            }
         }
 
         [HttpPost]

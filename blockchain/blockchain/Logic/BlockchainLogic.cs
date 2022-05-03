@@ -68,6 +68,38 @@ namespace blockchain.Logic
             return model;
         }
 
+        public float ConsultFunds(string dir)
+        {
+            float amount = -1;
+
+            Blocks.ForEach(block =>
+            {
+                string[] allTransactions = block.data.Split(',');
+
+                foreach (string transaction in allTransactions)
+                {
+                    string[] directions = transaction.Split('-');
+                    if (directions.Length == 2)
+                    {
+                        string[] values = directions[1].Split(':');
+
+                        if (directions[0] == dir)
+                        {
+                            if (amount == -1) amount = 0;
+                            amount = amount - float.Parse(values[1]);
+                        }
+                        else if (values[0] == dir)
+                        {
+                            if (amount == -1) amount = 0;
+                            amount = float.Parse(values[1]) + amount;
+                        }
+                    }
+                }
+            });
+
+            return amount;
+        }
+
         private string GenerateHash(string words)
         {
             using (SHA256 sha256 = SHA256.Create())

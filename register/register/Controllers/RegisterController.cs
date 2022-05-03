@@ -9,6 +9,8 @@ namespace register.Controllers
 {
     public class RegisterController : BaseController
     {
+
+        [ApiExplorerSettings(IgnoreApi = true)]
         [HttpPost]
         public async Task<RegisterTransactionResponse> RegisterTransaction(RegisterNewTransaction request)
         {
