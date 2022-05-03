@@ -4,10 +4,7 @@
     using shared.Blockchain.Model;
     using shared.Common;
     using shared.Opencloser.Api.Response;
-    using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
     using System.Threading.Tasks;
 
     public class OpencloserApi
@@ -16,5 +13,14 @@
 
         public static async Task<CloseBlockResponse> CloseBlock(BlockchainModel request) =>
             await Http.Post<CloseBlockResponse>($"{Constant.OpencloserEndpoint}CloseBlock", request);
+
+        public static async Task<CloseBlockResponse> OpenBlock(string totalBlocks, string lastHash) =>
+            await Http.Get<CloseBlockResponse>(
+                $"{Constant.OpencloserEndpoint}OpenBlock",
+                new Dictionary<string, string> {
+                    { "totalBlocks", totalBlocks },
+                    { "lastHash", lastHash },
+                }
+            );
     }
 }

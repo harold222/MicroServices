@@ -38,10 +38,19 @@ namespace opencloser.Controllers
         }
 
         [ApiExplorerSettings(IgnoreApi = true)]
-        [HttpPost]
-        public ActionResult OpenBlock()
+        [HttpGet]
+        public CloseBlockResponse OpenBlock(string totalBlocks, string lastHash)
         {
-            return Ok(new { Name = "Abriendo bloque" });
+            CloseBlockResponse response = new CloseBlockResponse();
+            response.NewBlock = new BlockchainModel
+            {
+                id = totalBlocks,
+                nonce = 0,
+                data = "",
+                previousHash = lastHash,
+                hash = ""
+            };
+            return response;
         }
     }
 }
