@@ -13,10 +13,10 @@ namespace blockchain.Logic
 {
     public class BlockchainLogic
     {
-        private static List<dynamic> Blocks = new List<dynamic>();
+        private static List<BlockchainModel> Blocks = new List<BlockchainModel>();
         private static int currentEditBlock = 0;
 
-        public async void RegistrarTx(string dir1, string dir2, float amount)
+        public async Task RegistrarTx(string dir1, string dir2, float amount)
         {
             if (Blocks.Count > 0)
             {
@@ -24,37 +24,8 @@ namespace blockchain.Logic
 
                 if (allTransactions.Count() >= 3)
                 {
-                    BlockchainModel sendModel = new BlockchainModel
-                    {
-                        id = Blocks[currentEditBlock].id,
-                        data = Blocks[currentEditBlock].data,
-                        nonce = Blocks[currentEditBlock].nonce,
-                        hash = Blocks[currentEditBlock].hash,
-                        previousHash = Blocks[currentEditBlock].previousHash
-                    };
-
-                    BlockchainModel responseModel = (await OpencloserApi.OpenBlock(sendModel)).NewBlock;
-                    Blocks[currentEditBlock].id = responseModel.id;
-                    Blocks[currentEditBlock].data = responseModel.data;
-                    Blocks[currentEditBlock].nonce = responseModel.nonce;
-                    Blocks[currentEditBlock].hash = responseModel.hash;
-                    Blocks[currentEditBlock].previousHash = responseModel.previousHash;
-
-                    // Close the block
-                    //string resultHash = "";
-                    //do
-                    //{
-                    //    Blocks[currentEditBlock].nonce = Blocks[currentEditBlock].nonce + 1;
-                    //    string allData =
-                    //        $"{Blocks[currentEditBlock].id}+{Blocks[currentEditBlock].nonce}+{Blocks[currentEditBlock].data}+{Blocks[currentEditBlock].previousHash}";
-
-                    //    resultHash = GenerateHash(allData);
-                    //    // hash generate 000 at the beginning of the string
-                    //} while (resultHash.Substring(0, 3) != "000");
-
-                    //// save hash of block
-                    //Blocks[currentEditBlock].hash = resultHash;
-                    // Create other block
+                    var response = await OpencloserApi.CloseBlock(Blocks[currentEditBlock]);
+                    Blocks[currentEditBlock] = response.NewBlock;
                     CreateNewBlock();
                 }
             }
@@ -148,14 +119,14 @@ namespace blockchain.Logic
 
             // previousHash if the first block save value defult
             // else save last generated hash
-            dynamic newBlock = new ExpandoObject();
-            newBlock.id = $"{totalBlocks}";
-            newBlock.nonce = 0;
-            newBlock.data = "";
-            newBlock.previousHash = totalBlocks == 0 ? "00000" : Blocks.LastOrDefault().hash;
-            newBlock.hash = "";
-
-            Blocks.Add(newBlock);
+            Blocks.Add(new BlockchainModel
+            {
+                id = $"{totalBlocks}",
+                nonce = 0,
+                data = "",
+                previousHash = totalBlocks == 0 ? "00000" : Blocks.LastOrDefault().hash,
+                hash = ""
+            });
             currentEditBlock = totalBlocks;
         }
 

@@ -24,11 +24,11 @@ namespace blockchain.Controllers
 
         [ApiExplorerSettings(IgnoreApi = true)]
         [HttpPost]
-        public RegisterTransactionResponse RegisterTransaction(RegisterNewTransaction request)
+        public async Task<RegisterTransactionResponse> RegisterTransaction(RegisterNewTransaction request)
         {
             RegisterTransactionResponse response = new RegisterTransactionResponse();
 
-            logic.RegistrarTx(request.Dir1, request.Dir2, request.Amount);
+            await logic.RegistrarTx(request.Dir1, request.Dir2, request.Amount).ConfigureAwait(false);
             response.Blocks = logic.PrintAllBlocks();
 
             return response;

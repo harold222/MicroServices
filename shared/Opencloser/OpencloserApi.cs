@@ -14,7 +14,7 @@
     {
         private static readonly Constants Constant = new Constants();
 
-        public static async Task<CloseBlockResponse> OpenBlock(BlockchainModel request) =>
-            await Http.Post<CloseBlockResponse>($"{Constant.OpencloserEndpoint}OpenBlock", request);
+        public static async Task<CloseBlockResponse> CloseBlock(BlockchainModel request) =>
+            await Http.Post<CloseBlockResponse>($"{Constant.OpencloserEndpoint}CloseBlock", request);
     }
 }
