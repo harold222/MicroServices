@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using shared.Blockchain.Api.Response;
 using shared.Common;
 using shared.Register;
 using shared.Wallet.Api.Request;
@@ -9,6 +10,7 @@ namespace wallet.Controllers
 {
     public class WalletController : BaseController
     {
+
         [HttpGet]
         public ActionResult ConsultFunds()
         {
@@ -18,10 +20,10 @@ namespace wallet.Controllers
         [HttpPost]
         public async Task<ActionResult> RegisterTransaction(RegisterNewTransaction request)
         {
-            if (!string.IsNullOrEmpty(request.Dir1) && !string.IsNullOrEmpty(request.Dir2))
+            if (!string.IsNullOrEmpty(request.Dir1) && !string.IsNullOrEmpty(request.Dir2) && request.Amount > 0)
             {
-                var registerResponse = await RegisterApi.RegisterTransaction(request).ConfigureAwait(false);
-                return Ok(new { Name = "Registrando Transaccion" });
+                RegisterTransactionResponse registerResponse = await RegisterApi.RegisterTransaction(request).ConfigureAwait(false);
+                return Ok(new { Blocks = registerResponse.Blocks });
             }
 
             return new ObjectResult(new { error = "Faltan direcciones" })

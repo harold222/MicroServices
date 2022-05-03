@@ -4,6 +4,73 @@
     "C:\\Users\\pedra\\OneDrive\\Documentos\\GitHub\\MicroServices\\wallet\\wallet\\wallet.csproj": {}
   },
   "projects": {
+    "C:\\Users\\pedra\\OneDrive\\Documentos\\GitHub\\MicroServices\\blockchain\\blockchain\\blockchain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\pedra\\OneDrive\\Documentos\\GitHub\\MicroServices\\blockchain\\blockchain\\blockchain.csproj",
+        "projectName": "blockchain",
+        "projectPath": "C:\\Users\\pedra\\OneDrive\\Documentos\\GitHub\\MicroServices\\blockchain\\blockchain\\blockchain.csproj",
+        "packagesPath": "C:\\Users\\pedra\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pedra\\OneDrive\\Documentos\\GitHub\\MicroServices\\blockchain\\blockchain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\pedra\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\pedra\\OneDrive\\Documentos\\GitHub\\MicroServices\\shared\\shared.csproj": {
+                "projectPath": "C:\\Users\\pedra\\OneDrive\\Documentos\\GitHub\\MicroServices\\shared\\shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.6.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\pedra\\OneDrive\\Documentos\\GitHub\\MicroServices\\shared\\shared.csproj": {
       "version": "1.0.37",
       "restore": {
@@ -118,6 +185,9 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
+              "C:\\Users\\pedra\\OneDrive\\Documentos\\GitHub\\MicroServices\\blockchain\\blockchain\\blockchain.csproj": {
+                "projectPath": "C:\\Users\\pedra\\OneDrive\\Documentos\\GitHub\\MicroServices\\blockchain\\blockchain\\blockchain.csproj"
+              },
               "C:\\Users\\pedra\\OneDrive\\Documentos\\GitHub\\MicroServices\\shared\\shared.csproj": {
                 "projectPath": "C:\\Users\\pedra\\OneDrive\\Documentos\\GitHub\\MicroServices\\shared\\shared.csproj"
               }

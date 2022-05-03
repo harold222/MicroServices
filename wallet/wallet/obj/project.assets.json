@@ -2103,6 +2103,23 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
+      "blockchain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Swashbuckle.AspNetCore": "5.6.3",
+          "shared": "1.0.37"
+        },
+        "compile": {
+          "bin/placeholder/blockchain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/blockchain.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "shared/1.0.37": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -6885,6 +6902,11 @@
         "system.xml.xdocument.nuspec"
       ]
     },
+    "blockchain/1.0.0": {
+      "type": "project",
+      "path": "../../blockchain/blockchain/blockchain.csproj",
+      "msbuildProject": "../../blockchain/blockchain/blockchain.csproj"
+    },
     "shared/1.0.37": {
       "type": "project",
       "path": "../../shared/shared.csproj",
@@ -6894,6 +6916,7 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "Swashbuckle.AspNetCore >= 5.6.3",
+      "blockchain >= 1.0.0",
       "shared >= 1.0.37"
     ]
   },
@@ -6924,6 +6947,9 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
+            "C:\\Users\\pedra\\OneDrive\\Documentos\\GitHub\\MicroServices\\blockchain\\blockchain\\blockchain.csproj": {
+              "projectPath": "C:\\Users\\pedra\\OneDrive\\Documentos\\GitHub\\MicroServices\\blockchain\\blockchain\\blockchain.csproj"
+            },
             "C:\\Users\\pedra\\OneDrive\\Documentos\\GitHub\\MicroServices\\shared\\shared.csproj": {
               "projectPath": "C:\\Users\\pedra\\OneDrive\\Documentos\\GitHub\\MicroServices\\shared\\shared.csproj"
             }
