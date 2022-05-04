@@ -22,6 +22,12 @@
 		<ProjectReference Include="..\..\blockchain\blockchain\blockchain.csproj" />
 		<ProjectReference Include="..\..\shared\shared.csproj" />
 	</ItemGroup>
+	
+	<ItemGroup>
+	  <Content Update="appsettings.development.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	</ItemGroup>
 
 	<ProjectExtensions>
 		<VisualStudio>

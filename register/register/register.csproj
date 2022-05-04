@@ -22,6 +22,12 @@
         <ProjectReference Include="..\..\shared\shared.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Content Update="appsettings.development.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+
 	<ProjectExtensions>
 		<VisualStudio><UserProperties properties_4launchsettings_1json__JsonSchema="" /></VisualStudio>
 	</ProjectExtensions>
