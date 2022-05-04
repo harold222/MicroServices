@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using shared.Blockchain.Api.Response;
 using shared.Common;
 using shared.Wallet.Api.Request;
+using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;

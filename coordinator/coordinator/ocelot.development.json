@@ -1,6 +1,22 @@
 ﻿{
   "Routes": [
     {
+      "DownstreamPathTemplate": "/api/register/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "register",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/register/{everything}",
+      "UpstreamHttpMethod": [
+        "GET",
+        "POST"
+      ],
+      "SwaggerKey": "register"
+    },
+    {
       "DownstreamPathTemplate": "/api/blockchain/{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -31,22 +47,6 @@
         "POST"
       ],
       "SwaggerKey": "opencloser"
-    },
-    {
-      "DownstreamPathTemplate": "/api/register/{everything}",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "register",
-          "Port": 80
-        }
-      ],
-      "UpstreamPathTemplate": "/api/register/{everything}",
-      "UpstreamHttpMethod": [
-        "GET",
-        "POST"
-      ],
-      "SwaggerKey": "register"
     },
     {
       "DownstreamPathTemplate": "/api/wallet/{everything}",

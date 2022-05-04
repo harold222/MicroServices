@@ -62,8 +62,8 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=development
     depends_on:
-      - wallet
       - register
+      - wallet
       - opencloser
       - blockchain
 

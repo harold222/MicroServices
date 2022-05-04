@@ -4,6 +4,7 @@ using shared.Blockchain.Api.Response;
 using shared.Common;
 using shared.Register;
 using shared.Wallet.Api.Request;
+using System;
 using System.Net;
 using System.Threading.Tasks;
 
@@ -38,7 +39,7 @@ namespace wallet.Controllers
         {
             if (!string.IsNullOrEmpty(request.Dir1) && !string.IsNullOrEmpty(request.Dir2) && request.Amount > 0)
             {
-                RegisterTransactionResponse registerResponse = await RegisterApi.RegisterTransaction(request).ConfigureAwait(false);
+                RegisterTransactionResponse registerResponse = await RegisterApi.RegisterTransaction(request);
                 return Ok(new { Blocks = registerResponse.Blocks });
             }
 

@@ -23,7 +23,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Content Update="appsettings.developmentsdad.json">
+      <Content Update="appsettings.development.json">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
     </ItemGroup>
