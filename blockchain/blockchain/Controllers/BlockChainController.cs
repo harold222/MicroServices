@@ -24,6 +24,24 @@ namespace blockchain.Controllers
         }
 
         [ApiExplorerSettings(IgnoreApi = true)]
+        [HttpGet]
+        public GetTotalBlocksResponse BlockOneHaveHash()
+        {
+            GetTotalBlocksResponse response = new GetTotalBlocksResponse();
+            response.exist = logic.BlockOneHaveHash();
+            return response;
+        }
+
+        [ApiExplorerSettings(IgnoreApi = true)]
+        [HttpGet]
+        public VerifyAmountInDirectionResponse VerifyAmountInDirection(string direction, string amount)
+        {
+            VerifyAmountInDirectionResponse response = new VerifyAmountInDirectionResponse();
+            response.success = logic.VerifyAmountInDirection(direction, float.Parse(amount));
+            return response;
+        }
+
+        [ApiExplorerSettings(IgnoreApi = true)]
         [HttpPost]
         public async Task<RegisterTransactionResponse> RegisterTransaction(RegisterNewTransaction request)
         {
@@ -31,7 +49,6 @@ namespace blockchain.Controllers
 
             await logic.RegistrarTx(request.Dir1, request.Dir2, request.Amount).ConfigureAwait(false);
             response.Blocks = logic.PrintAllBlocks();
-
             return response;
         }
     }

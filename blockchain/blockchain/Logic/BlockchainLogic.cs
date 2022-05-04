@@ -14,17 +14,14 @@ namespace blockchain.Logic
 
         public async Task RegistrarTx(string dir1, string dir2, float amount)
         {
-            if (Blocks.Count > 0)
-            {
-                string[] allTransactions = Blocks.LastOrDefault().data.Split(',');
 
-                if (allTransactions.Count() >= 3)
-                {
-                    Blocks[currentEditBlock] = (await OpencloserApi.CloseBlock(Blocks[currentEditBlock])).NewBlock;
-                    await CreateNewBlock().ConfigureAwait(false);
-                }
+            if (Blocks.Count == 0)
+                await CreateNewBlock().ConfigureAwait(false);
+            else
+            {
+                if (!string.IsNullOrEmpty(Blocks.LastOrDefault().hash))
+                    await CreateNewBlock().ConfigureAwait(false);  
             }
-            else await CreateNewBlock().ConfigureAwait(false);
 
             string transaction = $"{dir1}-{dir2}:{amount}";
             // save the transaction
@@ -32,6 +29,13 @@ namespace blockchain.Logic
                 Blocks[currentEditBlock].data == "" ?
                     transaction :
                     $"{Blocks[currentEditBlock].data},{transaction}";
+
+            // verify count of transactions
+            string[] allTransactions = Blocks[currentEditBlock].data.Split(',');
+            if (allTransactions.Count() >= 3)
+            {
+                Blocks[currentEditBlock] = (await OpencloserApi.CloseBlock(Blocks[currentEditBlock])).NewBlock;
+            }
         }
 
         public List<BlockchainModel> PrintAllBlocks()
@@ -84,6 +88,29 @@ namespace blockchain.Logic
             return amount;
         }
 
+        public int GetTotalBlocks() => Blocks.Count;
+
+        public bool BlockOneHaveHash() =>
+            GetTotalBlocks() > 0 ? !string.IsNullOrEmpty(Blocks[0].hash) : false;
+
+        public bool VerifyAmountInDirection(string direction, float amount)
+        {
+            bool success = false;
+            float result = ConsultFunds(direction);
+
+            if (result != -1)
+            {
+                if (amount != 0) // primera direccion quien envia, comprobar saldo
+                {
+                    if (result >= amount) success = true;
+                }
+                else // segunda direccion quien recibe, solo comprobar que exista
+                    success = true;
+            }
+
+            return success;
+        }
+
         private async Task CreateNewBlock()
         {
             currentEditBlock = GetTotalBlocks();
@@ -93,7 +120,5 @@ namespace blockchain.Logic
             )).NewBlock;
             Blocks.Add(response);
         }
-
-        private static int GetTotalBlocks() => Blocks.Count;
     }
 }

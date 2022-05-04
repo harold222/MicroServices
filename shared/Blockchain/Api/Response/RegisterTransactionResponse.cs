@@ -5,6 +5,8 @@
 
     public class RegisterTransactionResponse
     {
-        public List<BlockchainModel> Blocks { get; set; }
+        public List<BlockchainModel> Blocks { get; set; } = new List<BlockchainModel>();
+
+        public string Error { get; set; }
     }
 }

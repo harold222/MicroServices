@@ -40,7 +40,18 @@ namespace wallet.Controllers
             if (!string.IsNullOrEmpty(request.Dir1) && !string.IsNullOrEmpty(request.Dir2) && request.Amount > 0)
             {
                 RegisterTransactionResponse registerResponse = await RegisterApi.RegisterTransaction(request);
-                return Ok(new { Blocks = registerResponse.Blocks });
+
+                if (string.IsNullOrEmpty(registerResponse.Error))
+                {
+                    return Ok(new { Blocks = registerResponse.Blocks });
+                }
+                else
+                {
+                    return new ObjectResult(new { error = registerResponse.Error })
+                    {
+                        StatusCode = (int)HttpStatusCode.InternalServerError
+                    };
+                }
             }
 
             return new ObjectResult(new { error = "Faltan direcciones" })
